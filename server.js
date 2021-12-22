@@ -1,6 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
-const app = express();
+const server = express();
 const port = process.env.PORT||3000;
 const connect = mysql.createConnection({
     host: 'us-cdbr-east-05.cleardb.net',
@@ -9,15 +9,15 @@ const connect = mysql.createConnection({
     database: 'heroku_7f3c24aa7563043'
 })
 
-app.set('view_engine', 'ejs');
-app.listen(port);
-app.use(express.static(__dirname + '/public'));
+server.set('view_engine', 'ejs');
+server.listen(port);
+server.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
+server.get('/', (req, res) => {
     res.render("index.ejs")
 })
 
-app.get("/:search", function(req, res){
+server.get("/:search", function(req, res){
     var word = req.params.search;
     connect.query('SELECT * FROM the_robbers WHERE Text LIKE ?', "%"+word+"%" , (error, rows) => {
         if(error) throw error;
