@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-const port = 3000;
+const port = process.env.PORT||3000;
 const connect = mysql.createConnection({
     host: 'us-cdbr-east-05.cleardb.net',
     user: 'b5ba86357c201e',
