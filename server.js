@@ -22,13 +22,13 @@ server.get("/:search", function(req, res){
     connect.query('SELECT * FROM the_robbers WHERE Text LIKE ?', "%"+word+"%" , (error, rows) => {
         if(error) throw error;
         else {
-           let s = '<h1 class = "occurences"> There are ' +String(rows.length)+" occurences </h1>";
+           let s = '<h1 class = "occurences"> There are ' +String(rows.length)+" occurences of <strong>" + word+"</strong> </h1>";
             for (let i = 0; i < rows.length; i++) {
                 s+='<div class = "details"><h3 class = "location">'
                 s+='<span class="act">'+rows[i].Act+'</span>';
                 s+='<span class="scene">'+rows[i].Scene+'</span>';
                 s+='<span class="line">'+"Line: " +rows[i].Line+"</span>"+ "</h3>";
-                s+='<p class = "text">' +rows[i].Text+ "</p></div>";
+                s+='<p class = "text">' +rows[i].Text.replace(word, "<span class='keyword'>"+word+"</span>")+ "</p></div>";
             }
             res.render("search.ejs", {result: s});
         }

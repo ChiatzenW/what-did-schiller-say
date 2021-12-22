@@ -56,3 +56,20 @@ span.scene{
 span.line{
     color:var(--red)
 }
+footer{
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    height:1em;
+    width: 66%;
+}
+footer p{
+    color: var(--yellow)!important;
+    margin: 0;
+    padding: 0;
+}
+span.keyword{
+    background-color: var(--yellow);
+    color: var(--black);
+    font-weight: bold;
+}
