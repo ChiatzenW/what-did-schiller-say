@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>What did Schiller say?</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<div id="search_dialog">
+<h1>Search a string in Schiller's works</h1>
+<form id="search" action="/s" method="GET">
+    <input id="search_bar" type="text">
+    <button id="search_btn" type="submit"> Search </button>
+</form>
+</div>
 </body>
+
+
+<script>
+        var form=document.getElementById("search");
+        form.addEventListener('submit', function(){
+        var kw = document.getElementById("search_bar").value;
+        this.action = '/' + kw;
+        this.submit();
+    }, false);
+
+</script>
 </html>
+

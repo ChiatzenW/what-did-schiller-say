@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css2?family=Fira+Code:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+:root {
+    --blue: #61AFEF!important;
+    --white: #ABB2BF!important;
+    --black: #2b2c34!important;
+    --red: #E06C75!important;
+    --purple: #C678DD!important;
+    --emerald: #56B6C2!important;
+    --yellow: #E5C07B!important;
+    --green: #98c379!important;
+    --grey: #454c59!important;
+}
+*{
+    font-family: "Fira code";
+    color: var(--white);
+    background-color: var(--black)
+}
+
+body{
+    background-color: var(--black);
+}
+h1{
+    background-color: var(--black);
+    color: var(--white);
+}
+#search_btn{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    color: var(--white);
+    background-color: var(--black);
+    font-size: 24px;
+    height:50px;
+    width:400px;
+}
+#search_bar{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    border-radius:1em;
+    color: var(--white);
+    background-color: var(--black);
+    font-size: 24px;
+    height:50px;
+    width:700px;
+}
+span.act{
+    color: var(--green);
+}
+span.scene{
+    color:var(--blue)
+}
+span.line{
+    color:var(--red)
+}

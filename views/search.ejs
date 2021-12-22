@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>What did Schiller say?</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 </head>
 <body>
+<form id="search" action="/s" method="GET">
+    <input id="search_bar" type="text">
+    <button id="search_btn" type="submit"> Search </button>
+</form>
  <%- result %>
 </body>
+
+
+<script>
+    var form=document.getElementById("search");
+    form.addEventListener('submit', function(){
+        var kw = document.getElementById("search_bar").value;
+        this.action = '/' + kw;
+        this.submit();
+    }, false);
+
+</script>
 </html>
